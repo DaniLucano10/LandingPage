@@ -2,6 +2,9 @@
 import './App.css'
 
 import { Homepage } from './components/Homepage'
+import { ProgramsPage } from './components/ProgramsPage'
+import { QualificationsPage } from './components/QualificationsPage'
+import { RankingPage } from './components/RankingPage'
 import { UserInformation } from './components/UserInformation'
 
 function App() {
@@ -11,6 +14,9 @@ function App() {
     <>
       <Homepage /> 
       <UserInformation /> 
+      <RankingPage/>
+      <ProgramsPage/>
+      <QualificationsPage/>
     </>
   )
 }
