@@ -20,7 +20,7 @@ export const BuildPage = () => {
         <>
             <Box bg="#f6f6f7">
                 <Box p={14}>
-                    <Heading as="center" size="xl">BUILD YOUR PATH TO SUCCESS</Heading>
+                    <Heading as="center" size="xl" fontSize={{ base: "xl", md: "2xl", lg: "6xl" }}>BUILD YOUR PATH TO SUCCESS</Heading>
                 </Box>
                 <Container my={30} maxWidth="6xl">
                     <Grid templateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]} gap={8}>

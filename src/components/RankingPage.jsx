@@ -1,15 +1,30 @@
-import { Box, Container, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Container, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 
-export const RankingPage = ({idioma}) => {
+
+export const RankingPage = (idioma) => {
+
+
   return (
     <>
-      <Container maxW="5xl" my={50}>
-        <Stack direction="row" spacing={10} wrap="wrap" maxW="100%" >
+   
+      <Container 
+        maxW={['100%', '600px', '800px', '1200px']}
+        padding={[2, 4, 6, 8]}
+        margin="0 auto"
+      >
+        <SimpleGrid  maxW="100%" 
+          columns={{ base: 1, lg: 3 }}
+          direction={{ base: "column", md: "row" }}
+          spacing={{ base: 5, md: 20 }}
+          align="center"
+          justify="center"
+          wrap="wrap"
+        >
           <Box>
             <Stack direction="row" spacing={4} wrap="wrap">
-              <Heading size="2xl">1º</Heading>
+              <Heading fontSize={{ base: "lg", md: "m3xl", lg: "5xl" }}>1º</Heading>
               <Box whiteSpace="pre-line">
-                <Heading size='md' overflowWrap="break-word">UNIVERSITY{"\n"} IN SPAIN</Heading>
+                <Heading fontSize={{ base: "xs", md: "md", lg: "xl" }} overflowWrap="break-word">UNIVERSITY{"\n"} IN SPAIN</Heading>
                 <Text overflowWrap="break-word" wrap="wrap" maxWidth={200}>
                     { idioma === "español"? "Times Higher Education  ENCUESTA Y RANKING DE EMPLEABILIDAD UNIVERSITARIA MUNDIAL 2023": "Times Higher Education GLOBAL UNIVERSITY EMPLOYABILITY SURVEY AND RANKING 2023"}
                   
@@ -21,9 +36,9 @@ export const RankingPage = ({idioma}) => {
 
           <Box whiteSpace="pre-line" marginLeft={5}>
             <Stack direction="row" spacing={4} wrap="wrap">
-              <Heading size="2xl">6to</Heading>
+              <Heading fontSize={{ base: "lg", md: "m3xl", lg: "5xl" }}>6to</Heading>
               <Box whiteSpace="pre-line">
-                <Heading size='md'>UNIVERSITY{"\n"} IN EUROPE</Heading>
+                <Heading fontSize={{ base: "xs", md: "md", lg: "xl" }} >UNIVERSITY{"\n"} IN EUROPE</Heading>
                 <Text overflowWrap="break-word" wrap="wrap" maxWidth={200}>
                 { idioma === "español"? "Times Higher Education  ENCUESTA Y RANKING DE EMPLEABILIDAD UNIVERSITARIA MUNDIAL 2023": "Times Higher Education GLOBAL UNIVERSITY EMPLOYABILITY SURVEY AND RANKING 2023"}
                 </Text>
@@ -33,9 +48,9 @@ export const RankingPage = ({idioma}) => {
           </Box>
           <Box whiteSpace="pre-line" marginLeft={10}>
             <Stack direction="row" spacing={4} wrap="wrap">
-              <Heading size="2xl">18</Heading>
+              <Heading fontSize={{ base: "lg", md: "m3xl", lg: "5xl" }} >18</Heading>
               <Box whiteSpace="pre-line">
-                <Heading size='md'>UNIVERSITY{"\n"} WORLDWIDE</Heading>
+                <Heading fontSize={{ base: "xs", md: "md", lg: "xl" }} >UNIVERSITY{"\n"} WORLDWIDE</Heading>
                 <Text overflowWrap="break-word" wrap="wrap" maxWidth={200}>
                 { idioma === "español"? "Times Higher Education  ENCUESTA Y RANKING DE EMPLEABILIDAD UNIVERSITARIA MUNDIAL 2023": "Times Higher Education GLOBAL UNIVERSITY EMPLOYABILITY SURVEY AND RANKING 2023"}
                 </Text>
@@ -43,7 +58,7 @@ export const RankingPage = ({idioma}) => {
               </Box>
             </Stack>
           </Box>
-        </Stack>
+        </SimpleGrid>
       </Container>
     </>
   );

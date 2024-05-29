@@ -6,9 +6,9 @@ export const EmployersPage = () => {
     return (
 
         <>
-            <Box bg={{ base: "#f6f6f7", md: "#f6f6f7", lg: "#f6f6f7" }} p={20}>
+            <Box bg={{ base: "#f6f6f7", md: "#f6f6f7", lg: "#f6f6f7" }} p={{ base: 4, md: 8, lg: 12 }}>
                 <Box p={20} >
-                    <Heading as="section" size="xl">SOME TOP EMPLOYERS OF IE UNIVERSITY ALUMNI</Heading>
+                    <Heading as="section" fontSize={{ base: "xs", md: "2xl", lg: "4xl" }}>SOME TOP EMPLOYERS OF IE UNIVERSITY ALUMNI</Heading>
                 </Box>
                 <SimpleGrid templateColumns={["repeat(1, 1fr)", "repeat(5, 1fr)"]} gap={8} columns={1} spacing={1} marginLeft={120}>
                     <Box
@@ -18,9 +18,8 @@ export const EmployersPage = () => {
                     >
                          <Image
                         src="../src/assets/img/Google-360x173.webp"
-                        alt="Google"
-                        width="180px"
-                        height="80px"
+                        alt="auto"
+                        w={["50%", "50%", "70%"]}
                     />
                     </Box>
                     <Box
@@ -29,9 +28,9 @@ export const EmployersPage = () => {
                     >
                         <Image
                         src="../src/assets/img/ibm-logo-360x144.webp"
-                        alt="IBM"
-                        width="150px"
-                        height="60px"
+                        alt="auto"
+                        w={["50%", "50%", "70%"]}
+                       
                     />
                     </Box>
                     <Box
@@ -40,9 +39,8 @@ export const EmployersPage = () => {
                     >
                          <Image
                         src="../src/assets/img/Amazon-360x171.webp"
-                        alt="Amazon"
-                        width="180px"
-                        height="80px"
+                        alt="auto"
+                        w={["50%", "50%", "70%"]}
                     />
                     </Box>
                     <Box
@@ -51,9 +49,8 @@ export const EmployersPage = () => {
                     >
                         <Image
                         src="../src/assets/img/facebook-logo.webp"
-                        alt="Facebook"
-                        width="120px"
-                        height="120px"
+                        alt="auto"
+                        w={["50%", "50%", "50%"]}
                     />
                     </Box>
                     <Box
@@ -62,9 +59,8 @@ export const EmployersPage = () => {
                     >
                         <Image
                         src="../src/assets/img/Salesforce Logo.webp"
-                        alt="Salesforce"
-                        width="150px"
-                        height="100px"
+                        alt="auto"
+                        w={["50%", "50%", "60%"]}
                     />
                     </Box>
                 </SimpleGrid>

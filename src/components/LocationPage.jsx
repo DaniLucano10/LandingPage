@@ -16,7 +16,7 @@ export const LocationPage = () => {
     <>
       <Box bg={{ base: "#f6f6f7", md: "#f6f6f7", lg: "#f6f6f7" }} p={2}>
         <Container as="section" maxWidth="8xl">
-          <Heading size="xl">TWO IDEAL LOCATIONS</Heading>
+          <Heading fontSize={{ base: "xl", md: "2xl", lg: "6xl" }}>TWO IDEAL LOCATIONS</Heading>
           <Text my={6}>
             Enjoy the right university experience for you at our truly
             international university campus in Segovia, and our urban center
@@ -24,7 +24,7 @@ export const LocationPage = () => {
           </Text>
         </Container>
       </Box>
-      <Flex>
+      <Flex justify="space-between" align="center">
         <Box
           bg={{ base: "#000066", md: "#000066", lg: "#000066" }}
           w="100%"
@@ -33,7 +33,7 @@ export const LocationPage = () => {
         >
           {mostrarTexto1 ? (
             <Box p={10}>
-              <Heading as="center" my={6} color="white" size="md">
+              <Heading as="center" my={6} color="white" fontSize={{ base: "xs", md: "md", lg: "lg" }}>
                 THE TOWER OF THE FUTURE
               </Heading>
               <Text color="white">
@@ -64,7 +64,7 @@ export const LocationPage = () => {
         >
           {mostrarTexto2 ? (
             <Box p={10}>
-              <Heading as="center" my={6} color="black" size="md">
+              <Heading as="center" my={6} color="black" fontSize={{ base: "xs", md: "md", lg: "lg" }}>
                 A TRUE CAMPUS EXPERIENCE
               </Heading>
               <Text color="black">

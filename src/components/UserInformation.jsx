@@ -4,26 +4,39 @@ import {
   Divider,
   Heading,
   Image,
+  SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import { ModalForm } from "./ModalForm";
 
-
 export const UserInformation = () => {
-
   return (
     <>
-      <Box bg="#000066" id="UserInformation">
+      <Box bg="#000066" id="UserInformation" p={{ base: 4, md: 8, lg:12}}>
         <Container maxWidth="6xl" p={10}>
-          <Stack direction="row" spacing={40} wrap="wrap">
+          <SimpleGrid
+            columns={{ base: 2, md: 3, lg: 5 }}
+            direction={{ base: "column", md: "row" }}
+            spacing={{ base: 5, md: 40 }}
+            align="center"
+            justify="center"
+            wrap="wrap"
+          >
             <Box>
               <Image
                 boxSize="30px"
                 objectFit="cover"
                 src="../src/assets/img/duracion.webp"
+                h="auto"
               />
-              <Heading color="white" size="md" marginTop={5} marginLeft={-8}>
+              <Heading
+                color="white"
+                size="md"
+                marginTop={5}
+                marginLeft={-8}
+                fontSize={{ base: "xs", md: "md", lg: "xl" }}
+              >
                 DURATION
               </Heading>
               <Text color="white" my={4} fontSize="20px" marginLeft={-4}>
@@ -35,9 +48,15 @@ export const UserInformation = () => {
                 boxSize="30px"
                 objectFit="cover"
                 src="../src/assets/img/idioma.webp"
-                alt="Dan Abramov"
+                h="auto"
               />
-              <Heading color="white" size="md" marginTop={5} marginLeft={-8}>
+              <Heading
+                color="white"
+                size="md"
+                marginTop={5}
+                marginLeft={-8}
+                fontSize={{ base: "xs", md: "md", lg: "xl" }}
+              >
                 LANGUAGE
               </Heading>
               <Text color="white" my={4} fontSize="20px" marginLeft={-4}>
@@ -50,15 +69,21 @@ export const UserInformation = () => {
                 boxSize="30px"
                 objectFit="cover"
                 src="../src/assets/img/uvicacion.webp"
-                alt="Dan Abramov"
+                h="auto"
               />
-              <Heading color="white" size="md" marginTop={5} marginLeft={-8}>
+              <Heading
+                color="white"
+                size="md"
+                marginTop={5}
+                marginLeft={-8}
+                fontSize={{ base: "xs", md: "md", lg: "xl" }}
+              >
                 LOCATION
               </Heading>
               <Text
                 color="white"
                 my={4}
-                fontSize="20px"
+                fontSize="15px"
                 marginLeft={-20}
                 whiteSpace="pre-line"
               >
@@ -71,9 +96,15 @@ export const UserInformation = () => {
                 boxSize="30px"
                 objectFit="cover"
                 src="../src/assets/img/consumo.webp"
-                alt="Dan Abramov"
+                h="auto"
               />
-              <Heading color="white" size="md" marginTop={5} marginLeft={-4}>
+              <Heading
+                color="white"
+                size="md"
+                marginTop={5}
+                marginLeft={-4}
+                fontSize={{ base: "xs", md: "md", lg: "xl" }}
+              >
                 INKATE
               </Heading>
               <Text color="white" my={4} fontSize="20px" marginLeft={-4}>
@@ -86,9 +117,15 @@ export const UserInformation = () => {
                 boxSize="30px"
                 objectFit="cover"
                 src="../src/assets/img/formato.webp"
-                alt="Dan Abramov"
+                h="auto"
               />
-              <Heading color="white" size="md" marginTop={5} marginLeft={-4}>
+              <Heading
+                color="white"
+                size="md"
+                marginTop={5}
+                marginLeft={-4}
+                fontSize={{ base: "xs", md: "md", lg: "xl" }}
+              >
                 FORMAT
               </Heading>
               <Text
@@ -101,18 +138,20 @@ export const UserInformation = () => {
                 Full-time
               </Text>
             </Box>
-          </Stack>
+          </SimpleGrid>
           <Box p={4}>
             <Divider my={-5} marginTop={50} marginLeft={-10} width="1000px" />
           </Box>
         </Container>
-        <Box color="white" marginLeft={20}>
-          <Heading my={4} 
-            fontSize={["2xl", "3xl", "4xl", "5xl"]}
-            whiteSpace="pre-line">
+        <Box color="white" p={{ base: 4, md: 10, lg:120}}>
+          <Heading
+            my={4}
+            fontSize={["xl", "3xl", "4xl", "5xl"]}
+            whiteSpace="pre-line"
+          >
             TRAINING THE NEXT{"\n"} GENERATION OF{"\n"} CHANGE-MAKERS
           </Heading>
-          <Text my={10} fontSize="25px" whiteSpace="pre-line">
+          <Text my={10} fontSize="xl" whiteSpace="pre-line">
             This bachelor is aimed at analytical driven individuals who possess
             {"\n"}
             strong critical thinking abilities and wish to harness the power of
@@ -121,23 +160,21 @@ export const UserInformation = () => {
             solve the most{"\n"} pressing challenges of businesses and
             institutions.
           </Text>
-          <Container as="section" maxW={-4} my={-4}>
+          <Box as="section"  >
             <ModalForm />
-          </Container>
+          </Box>
         </Box>
-        <Box
-            marginLeft="1300px"
-            right="40px"
-            bottom="50px"
-            marginTop="-200px"
-        >
-        <Image 
-            src="../src/assets/img/ie.webp" 
+        <Box marginLeft="900px" right="40px" bottom="10px" marginTop="-200px" p={{ base: 1, md: 1}}>
+          <Image
+            src="../src/assets/img/ie.webp"
             boxSize="100px"
             height="250"
             width="350"
-        />
+            h="auto"
+            p={{ base: 20, md: 20, lg:30}}
+          />
         </Box>
+        
       </Box>
     </>
   );

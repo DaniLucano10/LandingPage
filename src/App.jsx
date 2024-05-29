@@ -12,12 +12,14 @@ import { RankingPage } from './components/RankingPage'
 import { UserInformation } from './components/UserInformation'
 import { UserPage } from './components/UserPage'
 import { FormPage } from './components/FormPage'
+import { ButtonPage } from './components/ButtonPage'
 
 function App() {
 
 
   return (
     <>
+    <ButtonPage />
       <Homepage /> 
       <UserInformation /> 
       <RankingPage/>

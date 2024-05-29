@@ -18,7 +18,7 @@ export const ProgramsPage = () => {
       <Box bg="#f6f6f7">
         <Container as="center" maxW="100%" p={20}>
           <Heading
-            fontSize={["2xl", "3xl", "4xl", "6xl"]}
+            fontSize={["xl", "2xl", "4xl", "6xl"]}
             whiteSpace="pre-wrap"
             lineHeight="shorter"
           >
@@ -68,7 +68,7 @@ export const ProgramsPage = () => {
                   <h2>
                     <AccordionButton>
                       <Box flex="1" textAlign="left" >
-                        <Heading size="sm">ARTIFICIAL INTELLIGENCE AND HEALTHCARE</Heading>
+                        <Heading fontSize={{ base: "xs", md: "sm", lg: "sm" }} >ARTIFICIAL INTELLIGENCE AND HEALTHCARE</Heading>
                       </Box>
                       <AccordionIcon m={10} marginRight="8px" marginTop="8px" boxSize={10} />
                     </AccordionButton>
@@ -106,7 +106,7 @@ export const ProgramsPage = () => {
                   <h2>
                     <AccordionButton>
                       <Box flex="1" textAlign="left">
-                        <Heading size="sm">ARTIFICIAL INTELLIGENCE AND DATA ENGINEERING</Heading>
+                        <Heading fontSize={{ base: "xs", md: "sm", lg: "sm" }}>ARTIFICIAL INTELLIGENCE AND DATA ENGINEERING</Heading>
                       </Box>
                       <AccordionIcon m={10} marginRight="8px" marginTop="8px" boxSize={10}/>
                     </AccordionButton>

@@ -102,7 +102,8 @@ export const FormPage = () => {
 
   return (
     <>
-      <Box bg={{ base: "#000066", md: "#000066", lg: "#000066" }} p={20} id="FormPage">
+   
+      <Box bg={{ base: "#000066", md: "#000066", lg: "#000066" }} p={{ base: 4, md: 8, lg: 12 }}id="FormPage">
         <Box p={14}></Box>
         <Box
           bg={{ base: "white", md: "white", lg: "white" }}
@@ -112,7 +113,7 @@ export const FormPage = () => {
         >
           <Box mt={10} >
             <Box>
-              <Heading size="md" my={5}>
+              <Heading  my={5}  fontSize={{ base: "md", md: "md", lg: "xl" }}>
                 WANT TO KNOW MORE?
               </Heading>
               <form onSubmit={handleSubmit}>
@@ -294,6 +295,7 @@ export const FormPage = () => {
                   borderColor="#ccd0d5"
                   color="white"
                   whiteSpace="nowrap"
+                  size={{ base: 'md', md: 'lg' }}
                   
                 >
                   DOWNLOAD BROCHURE
@@ -303,7 +305,7 @@ export const FormPage = () => {
           </Box>
         </Box>
       </Box>
-      <Box p={10} bg={{ base: "#333", md: "#333", lg: "#333"}}>
+      <Box p={{ base: 4, md: 8, lg: 12 }} bg={{ base: "#333", md: "#333", lg: "#333"}}>
         <Flex flexDirection={{ base: "column", md: "row" }} justify={{ base: "center", md: "space-around" }} >
           <Heading marginLeft={2} w="50%" size="sm" color="white">REINVENTING HIGHER EDUCATION</Heading>
           <Text whiteSpace="pre-wrap" marginLeft={10} w="50%" color="white">

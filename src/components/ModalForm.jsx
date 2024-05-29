@@ -112,7 +112,7 @@ export const ModalForm = () => {
       <Box
         onClick={handleOpen}
         as="button"
-        width="350px"
+        width="300px"
         height="60px"
         px="80px"
         
@@ -122,7 +122,7 @@ export const ModalForm = () => {
         color="white"
         whiteSpace="nowrap"
       >
-        <Heading fontSize="20" marginLeft={-5}>DOWNLOAD BROCHURE</Heading>
+        <Heading  fontSize={{ base: "xs", md: "md", lg: "lg" }} marginLeft={-10}>DOWNLOAD BROCHURE</Heading>
       </Box>
 
       <Box>
@@ -134,7 +134,7 @@ export const ModalForm = () => {
           <ModalOverlay />
           <ModalContent maxWidth={900} borderRadius="none">
             <ModalHeader>
-              <Heading size="md">WANT TO KNOW MORE?</Heading>
+              <Heading fontSize={{ base: "xs", md: "md", lg: "lg" }} >WANT TO KNOW MORE?</Heading>
             </ModalHeader>
             <ModalCloseButton />
             <ModalBody pb={50}>
@@ -318,7 +318,9 @@ export const ModalForm = () => {
                   color="white"
                   whiteSpace="nowrap"
                 >
+                  <Heading fontSize={{ base: "xs", md: "md", lg: "md" }} >
                   DOWNLOAD BROCHURE
+                  </Heading>
                 </Box>
               </form>
             </ModalBody>

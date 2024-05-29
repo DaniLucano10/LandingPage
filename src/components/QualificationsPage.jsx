@@ -28,7 +28,7 @@ export const QualificationsPage = () => {
         >
           {/* Primera Columna */}
           <Box flex="1 1 40%" mr={4} >
-            <Heading as="h4" size="2xl" mb={4}>
+            <Heading as="h4" fontSize={{ base: "md", md: "3xl", lg: "5xl" }} mb={4}>
               DUAL DEGREES WITH THE BACHELOR IN DATA AND BUSINESS ANALYTICS
             </Heading>
             <Text>
@@ -59,7 +59,7 @@ export const QualificationsPage = () => {
                     <h2>
                       <AccordionButton>
                         <Box flex="1" textAlign="left">
-                          <Heading size="md">
+                          <Heading fontSize={{ base: "xs", md: "md", lg: "xl" }}>
                             DUAL DEGREE IN BUSINESS ADMINISTRATION & DATA AND BUSINESS
                             ANALYTICS
                           </Heading>
@@ -106,7 +106,7 @@ export const QualificationsPage = () => {
                     <h2>
                       <AccordionButton>
                         <Box flex="1" textAlign="left">
-                          <Heading size="md">
+                          <Heading fontSize={{ base: "xs", md: "md", lg: "xl" }}>
                             DUAL DEGREE IN PHILOSOPHY, POLITICS, LAW AND ECONOMICS &
                             DATA AND BUSINESS ANALYTICS
                           </Heading>
