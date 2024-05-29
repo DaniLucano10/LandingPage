@@ -14,7 +14,7 @@ export const UserInformation = () => {
 
   return (
     <>
-      <Box bg="#000066">
+      <Box bg="#000066" id="UserInformation">
         <Container maxWidth="6xl" p={10}>
           <Stack direction="row" spacing={40} wrap="wrap">
             <Box>

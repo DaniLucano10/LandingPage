@@ -1,14 +1,8 @@
-import { useState } from 'react';
+import { useForm } from "react-hook-form";
 import {
-  ChakraProvider,
+
   Button,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
+
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -16,107 +10,31 @@ import {
 } from '@chakra-ui/react';
 
 function Borrador() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-  });
-  const [formErrors, setFormErrors] = useState({});
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const handleOpen = () => setIsOpen(true);
-  const handleClose = () => {
-    setIsOpen(false);
-    setFormData({ name: '', email: '' });
-    setFormErrors({});
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-    setFormErrors((prevErrors) => ({
-      ...prevErrors,
-      [name]: '',
-    }));
-  };
-
-  const validate = () => {
-    const errors = {};
-    if (!formData.name) {
-      errors.name = 'Name is required';
-    }
-    if (!formData.email) {
-      errors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = 'Email is invalid';
-    }
-    return errors;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const errors = validate();
-    if (Object.keys(errors).length === 0) {
-      // Lógica para manejar el submit
-      console.log('Form Data:', formData);
-      handleClose();
-    } else {
-      setFormErrors(errors);
-    }
+  const onSubmit = (data) => {
+    console.log(data);
+    // Aquí puedes enviar los datos del formulario
   };
 
   return (
-    <ChakraProvider>
-      <Button onClick={handleOpen}>Open Modal</Button>
+    <>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <FormControl isInvalid={errors.nombre}>
+          <FormLabel htmlFor="nombre">Nombre</FormLabel>
+          <Input type="text" id="nombre" {...register("nombre", { required: "El nombre es requerido" })} />
+          <FormErrorMessage>{errors.nombre && errors.nombre.message}</FormErrorMessage>
+        </FormControl>
 
-      <Modal isOpen={isOpen} onClose={handleClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Form Modal</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <form onSubmit={handleSubmit}>
-              <FormControl isInvalid={formErrors.name}>
-                <FormLabel>Name</FormLabel>
-                <Input
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                />
-                {formErrors.name && (
-                  <FormErrorMessage>{formErrors.name}</FormErrorMessage>
-                )}
-              </FormControl>
+        <FormControl isInvalid={errors.email}>
+          <FormLabel htmlFor="email">Email</FormLabel>
+          <Input type="email" id="email" {...register("email", { required: "El email es requerido", pattern: { value: /^\S+@\S+$/i, message: "Email inválido" } })} />
+          <FormErrorMessage>{errors.email && errors.email.message}</FormErrorMessage>
+        </FormControl>
 
-              <FormControl mt={4} isInvalid={formErrors.email}>
-                <FormLabel>Email</FormLabel>
-                <Input
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter your email"
-                />
-                {formErrors.email && (
-                  <FormErrorMessage>{formErrors.email}</FormErrorMessage>
-                )}
-              </FormControl>
-            </form>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="blue" onClick={handleSubmit}>
-              Submit
-            </Button>
-            <Button variant="ghost" onClick={handleClose}>
-              Cancel
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </ChakraProvider>
+        <Button type="submit" mt={4} colorScheme="teal">Enviar</Button>
+      </form>
+    </>
   );
 }
 

@@ -6,29 +6,22 @@ import {
   Heading,
   Input,
   Link,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
   Select,
-  Text,
-  useDisclosure,
+  Text
 } from "@chakra-ui/react";
 import { useState } from "react";
-
 import { countries } from "countries-list";
+import { Flex } from "antd";
 
-export const ModalForm = () => {
-  const { onOpen } = useDisclosure();
+export const FormPage = () => {
+
 
   const countryOptions = Object.values(countries).map((country) => ({
     value: country.name,
     label: country.name,
   }));
 
-  const [isOpen, setIsOpen] = useState(false);
+  
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -109,35 +102,19 @@ export const ModalForm = () => {
 
   return (
     <>
-      <Box
-        onClick={handleOpen}
-        as="button"
-        width="350px"
-        height="60px"
-        px="80px"
-        
-        fontWeight="semibold"
-        bg="#000066"
-        borderColor="#ccd0d5"
-        color="white"
-        whiteSpace="nowrap"
-      >
-        <Heading fontSize="20" marginLeft={-5}>DOWNLOAD BROCHURE</Heading>
-      </Box>
-
-      <Box>
-        <Modal
-          isOpen={isOpen}
-          onClose={handleClose}
-          closeOnOverlayClick={false}
+      <Box bg={{ base: "#000066", md: "#000066", lg: "#000066" }} p={20} id="FormPage">
+        <Box p={14}></Box>
+        <Box
+          bg={{ base: "white", md: "white", lg: "white" }}
+          maxW="1000px"
+          mx="auto"
+          p={15}
         >
-          <ModalOverlay />
-          <ModalContent maxWidth={900} borderRadius="none">
-            <ModalHeader>
-              <Heading size="md">WANT TO KNOW MORE?</Heading>
-            </ModalHeader>
-            <ModalCloseButton />
-            <ModalBody pb={50}>
+          <Box mt={10} >
+            <Box>
+              <Heading size="md" my={5}>
+                WANT TO KNOW MORE?
+              </Heading>
               <form onSubmit={handleSubmit}>
                 <FormControl size="lg" isInvalid={formErrors.name}>
                   <Input
@@ -192,7 +169,7 @@ export const ModalForm = () => {
                   )}
                 </FormControl>
 
-                <FormControl w="850px" mt={3} isInvalid={formErrors.country}>
+                <FormControl w="970px" mt={3} isInvalid={formErrors.country}>
                   <Select
                     name="country"
                     value={formData.country}
@@ -244,7 +221,7 @@ export const ModalForm = () => {
                     value={formData.onChange}
                     onChange={handleChange}
                     id="example"
-                    placeholder="Yoy are a*"
+                    placeholder="You are a*"
                     borderRadius="none"
                     borderTop="none"
                     borderLeft="none"
@@ -306,7 +283,7 @@ export const ModalForm = () => {
                 </Text>
 
                 <Box
-                  onClick={onOpen}
+                  onClick={handleOpen}
                   as="button"
                   width="250px"
                   height="50px"
@@ -317,13 +294,24 @@ export const ModalForm = () => {
                   borderColor="#ccd0d5"
                   color="white"
                   whiteSpace="nowrap"
+                  
                 >
                   DOWNLOAD BROCHURE
                 </Box>
               </form>
-            </ModalBody>
-          </ModalContent>
-        </Modal>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box p={10} bg={{ base: "#333", md: "#333", lg: "#333"}}>
+        <Flex flexDirection={{ base: "column", md: "row" }} justify={{ base: "center", md: "space-around" }} >
+          <Heading marginLeft={2} w="50%" size="sm" color="white">REINVENTING HIGHER EDUCATION</Heading>
+          <Text whiteSpace="pre-wrap" marginLeft={10} w="50%" color="white">
+            © 2024 IE | You can contact the IE and the IE Foundation's DPO at
+            DataPrivacyOffice@ie.edu{"\n"} This site is protected by reCAPTCHA and the
+            Google Privacy Policy and Terms of Service apply.
+          </Text>
+        </Flex>
       </Box>
     </>
   );

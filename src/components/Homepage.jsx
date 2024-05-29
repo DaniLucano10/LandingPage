@@ -1,34 +1,21 @@
 import {
     Box,
-    Checkbox,
     Container,
-    FormControl,
-    FormErrorMessage,
     Heading,
     Image,
-    Input,
     Link,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalHeader,
-    ModalOverlay,
-    Select,
     Text,
-    useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { HiChevronDoubleDown } from "react-icons/hi2";
 import { motion } from "framer-motion";
-import { countries } from "countries-list";
 import { ModalForm } from "./ModalForm";
 
 export const Homepage = () => {
 
     const [posicion] = useState({ x: 20, y: 150 });
 
-   
+
 
     return (
         <>
@@ -70,14 +57,16 @@ export const Homepage = () => {
                     HARNESS THE POWER OF DATA TO {"\n"} TRANSFORM THE WORLD
                 </Heading>
                 <Container as="center" my={10}>
-                   <ModalForm/>
+                    <ModalForm />
                 </Container>
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                    <Box as="center" color="white" fontSize="60px" my={-5}>
-                        <HiChevronDoubleDown />
+                    <Box as="center" color="white" fontSize="60px" my={-5} >
+                        <Link href="#UserInformation" smoothScroll>
+                            <HiChevronDoubleDown icon="icono" />
+                        </Link>
                     </Box>
                 </motion.div>
             </Box>
